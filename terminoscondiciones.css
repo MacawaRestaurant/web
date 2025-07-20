@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    text-align: center;
+    background-image: url('https://i.pinimg.com/originals/23/ce/8e/23ce8ec4d5b057c3eec8902e29d8d351.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #4E342E;
+    color: white;
+    height: 80px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,240,240,0.9));
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left;
+}
+.navbar {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 100;
+}
+
+.menu-toggle {
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    background-color: beige;
+    padding: 15px 15px;
+    border-radius: 5px;
+    border: none;
+    transition: background 0.3s;
+}
+
+.menu-toggle:hover {
+    background-color: white;
+}
+
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: max-content;
+    min-width: 220px;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links li {
+    padding: 10px 20px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.footer {
+    background-color: beige;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-weight: bold;
+}
+
+.nav-links.active {
+    display: block;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2, h3 {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h2 {
+    color: #217dbb;
+}
+
+h3 {
+    color: #2c3e50;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+}

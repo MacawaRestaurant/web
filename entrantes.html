@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Entrantes.css" />
+</head>
+<body>
+      <section id="productos">
+    <h1>Nuestros Productos</h1>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://www.gourmet.cl/wp-content/uploads/2014/09/pan-de-ajo.jpg" alt="Pan ajo" />
+        <h4>Pan de ajo</h4>
+        <p>Pan tostado con mantequilla, ajo y perejil.</p>
+        <p class="price">$4.00</p>
+       <a href="#" onclick="agregarAlCarrito('Pan de ajo', 4.00, 'https://www.gourmet.cl/wp-content/uploads/2014/09/pan-de-ajo.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://jetextramar.com/wp-content/uploads/2021/07/empresa-de-alimentos-receta-de-guacamole.jpg" alt="Nachos" />
+        <h4>Nachos con queso</h4>
+        <p>Nachos cubiertos de queso chedar y carne molida.</p>
+        <p class="price">$7.00</p>
+       <a href="#" onclick="agregarAlCarrito('Nachos con queso', 7.00, 'https://jetextramar.com/wp-content/uploads/2021/07/empresa-de-alimentos-receta-de-guacamole.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://www.recetasnestle.com.mx/sites/default/files/srh_recipes/9a8ca4c211077e56400bbb32d386cb21.jpg" alt="Tabla queso" />
+        <h4>Tabla de quesos</h4>
+        <p>Variedad de quesos acompañados con frutas o nueces.</p>
+        <p class="price">$9.00</p>
+       <a href="#" onclick="agregarAlCarrito('Tabla de Quesos', 9.00, 'https://www.recetasnestle.com.mx/sites/default/files/srh_recipes/9a8ca4c211077e56400bbb32d386cb21.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://www.recetassalvador.com/base/stock/Recipe/yuca-frita-o-sancochada/yuca-frita-o-sancochada_web.jpg.webp" alt="Yucas" />
+        <h4>Yucas Fritas</h4>
+        <p>Yucas crocantes acompañadas con una salsa de queso.</p>
+        <p class="price">$6.70</p>
+      <a href="#" onclick="agregarAlCarrito('Yucas Fritas', 6.70, 'https://www.recetassalvador.com/base/stock/Recipe/yuca-frita-o-sancochada/yuca-frita-o-sancochada_web.jpg.webp')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+    </div>
+  </section>
+  <a href="index.html" class="button" style="background-color: beige;">Volver</a>
+  <script>
+function agregarAlCarrito(nombre, precio, imagen) {
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Buscar si ya existe
+  const productoExistente = carrito.find(p => p.nombre === nombre);
+
+  if (productoExistente) {
+    productoExistente.cantidad += 1;
+  } else {
+    carrito.push({ nombre, precio, imagen, cantidad: 1 });
+  }
+
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  // Mostrar mensaje al usuario
+  alert('✅ Has añadido al carrito exitosamente.');
+}
+</script>
+</body>
+</html>
