@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bebida.css" />
+</head>
+<body>
+      <section id="productos">
+    <h1>Nuestros Productos</h1>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://www.supermercadosantamaria.com/documents/10180/10504/124901978_G.jpg" alt="Aguas" />
+        <h4>Aguas</h4>
+        <p>Aguas refrescantes.</p>
+        <p class="price">$1.00</p>
+       <a href="#" onclick="agregarAlCarrito('Aguas', 1.00, 'https://www.supermercadosantamaria.com/documents/10180/10504/124901978_G.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://comedera.com/wp-content/uploads/sites/9/2022/04/Limonada-shutterstock_379385302.jpg" alt="Limonada" />
+        <h4>Limonada</h4>
+        <p>Bebida refrescante y deliciosa ideal para un dia caluroso</p>
+        <p class="price">$2.50</p>
+        <a href="#" onclick="agregarAlCarrito('Limonada', 2.50, 'https://comedera.com/wp-content/uploads/sites/9/2022/04/Limonada-shutterstock_379385302.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://static.brandfinance.com/wp-content/uploads/2023/08/Corona-extra-scaled.jpg" alt="Cerveza " />
+        <h4>Cerveza </h4>
+        <p>Helada y refrescante.</p>
+        <p class="price">$2.50</p>
+        <a href="#" onclick="agregarAlCarrito('Cerveza', 2.50, 'https://static.brandfinance.com/wp-content/uploads/2023/08/Corona-extra-scaled.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://cdn7.kiwilimon.com/recetaimagen/3613/640x640/18285.jpg.jpg" alt="Te Helado" />
+        <h4>Té Helado</h4>
+        <p>Bebida refrescante que se obtiene al enfriar o servir té con hielo</p>
+        <p class="price">$3.00</p>
+        <a href="#" onclick="agregarAlCarrito('Té Helado', 3.00, 'https://cdn7.kiwilimon.com/recetaimagen/3613/640x640/18285.jpg.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+    </div>
+  </section>
+   <a href="index.html" class="button" style="background-color: beige;">Volver</a>
+   <script>
+function agregarAlCarrito(nombre, precio, imagen) {
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Buscar si ya existe
+  const productoExistente = carrito.find(p => p.nombre === nombre);
+
+  if (productoExistente) {
+    productoExistente.cantidad += 1;
+  } else {
+    carrito.push({ nombre, precio, imagen, cantidad: 1 });
+  }
+
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  // Mostrar mensaje al usuario
+  alert('✅ Has añadido al carrito exitosamente.');
+}
+</script>
+</body>
+</html>
+</body>
+</html>

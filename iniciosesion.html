@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MACAWA RESTAURANT</title>
+    <link rel="stylesheet" href="iniciosesion.css">
+</head>
+<body>
+    <header>
+        <h1>MACAWA RESTAURANT<br></h1>
+        <nav>
+            <button id="btn-login">Iniciar Sesión</button>
+            <button id="btn-register">Registrarse</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Formulario de Iniciar Sesión -->
+        <div id="login-form" class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button id="btn-iniciar-sesion">Iniciar Sesión</button>
+            <p>¿No tienes cuenta? <a href="#" id="link-register">Regístrate</a></p>
+            <p><a href="#" id="link-olvido">¿Has olvidado tu contraseña?</a></p>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <div id="register-form" class="form-container hidden">
+            <h2>Registrarse</h2>
+            <input type="text" placeholder="Nombres Completos" required>
+            <input type="text" placeholder="Apellidos Completos" required>
+            <input type="int" placeholder="Cedula" required>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <input type="password" placeholder="Confirmar Contraseña" required>
+            <button>Registrarse</button>
+            <p>¿Ya tienes cuenta? <a href="#" id="link-login">Inicia sesión</a></p>
+        </div>
+
+        <!-- Formulario de Recuperar Contraseña -->
+        <div id="olvido-form" class="form-container hidden">
+            <h2>¿Olvidate tu Contraseña?</h2>
+            <p>Introduce tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</p>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <button>Enviar</button>
+            <p><a href="#" id="link-back-login">Volver a Iniciar Sesión</a></p>
+        </div>
+    </div>
+
+    <script src="iniciosesion.js"></script>
+    </header>
+</body>
+</html>

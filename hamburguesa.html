@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hambureguesa.css" />
+</head>
+<body>
+      <section id="productos">
+    <h1>Nuestros Productos</h1>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://imag.bonviveur.com/hamburguesa-clasica.jpg" alt="Hamburguesa Clasica" />
+        <h4>Hamburguesa Clásica</h4>
+        <p>Carne de res, lechuga, tomate, cebolla, queso cheddar y mayonesa.</p>
+        <p class="price">$3.50</p>
+       <a href="#" onclick="agregarAlCarrito('Hamburguesa Clasica', 3.50, 'https://imag.bonviveur.com/hamburguesa-clasica.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://bambuleburger.com/wp-content/uploads/2024/05/hamburguesa-doble-carne-1.jpg" alt="Hamburguesa doble carne" />
+        <h4>Hamburguesa doble carne</h4>
+        <p>Consiste en: dos medallones de carne, doble queso, lechuga, tomate y salsa especial.</p>
+        <p class="price">$4.00</p>
+        <a href="#" onclick="agregarAlCarrito('Hamburguesa doble carne', 4.00, 'https://bambuleburger.com/wp-content/uploads/2024/05/hamburguesa-doble-carne-1.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/681c719667d572276a1507aea71de9ca.jpg" alt="Hamburguesa de Pollo" />
+        <h4>Hamburguesa de Pollo </h4>
+        <p>Pechuga de pollo empanizada a la plancha, con lechuga, tomate y mayonesa.</p>
+        <p class="price">$3.00</p>
+        <a href="#" onclick="agregarAlCarrito('Hamburguesa de Pollo', 3.00, 'https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/681c719667d572276a1507aea71de9ca.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://www.supermaxi.com/wp-content/uploads/2024/05/Hamburguesa-2.png" alt="Hamburguesa BBQ" />
+        <h4> Hamburguesa BBQ</h4>
+        <p>Bañadas en salsa BBQ casera, queso cheddar fuerte, tocino salado, lechuga crujiente, tomates jugosos y tiras de cebolla crujientes.</p>
+        <p class="price">$4.50</p>
+        <a href="#" onclick="agregarAlCarrito('Hamburguesa BBQ', 4.50, 'https://www.supermaxi.com/wp-content/uploads/2024/05/Hamburguesa-2.png')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+    </div>
+  </section>
+  <a href="index.html" class="button" style="background-color: beige;">Volver</a>
+  <script>
+function agregarAlCarrito(nombre, precio, imagen) {
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Buscar si ya existe
+  const productoExistente = carrito.find(p => p.nombre === nombre);
+
+  if (productoExistente) {
+    productoExistente.cantidad += 1;
+  } else {
+    carrito.push({ nombre, precio, imagen, cantidad: 1 });
+  }
+
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  // Mostrar mensaje al usuario
+  alert('✅ Has añadido al carrito exitosamente.');
+}
+</script>
+</body>
+</html>
+</body>
+</html>

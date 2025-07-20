@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pizza.css" />
+</head>
+<body>
+      <section id="productos">
+    <h1>Nuestros Productos</h1>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://www.clarin.com/img/2023/08/01/SL3EslnOA_1200x630__1.jpg" alt="Pizza Margarita" />
+        <h4>Pizza Margarita</h4>
+        <p>Una pizza clasica que contiene: tomate, mozzarella y albahaca.</p>
+        <p class="price">$15.00</p>
+        <a href="#" onclick="agregarAlCarrito('Pizza Margarita', 15.00, 'https://www.clarin.com/img/2023/08/01/SL3EslnOA_1200x630__1.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://imag.bonviveur.com/presentacion-principal-de-la-pizza-hawaiana.jpg" alt="Croissant" />
+        <h4>Pizza Hawaiana</h4>
+        <p>Jamón, piña y queso.</p>
+        <p class="price">$12.00</p>
+       <a href="#" onclick="agregarAlCarrito('Pizza Hawaina', 12.00, 'https://imag.bonviveur.com/presentacion-principal-de-la-pizza-hawaiana.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://www.demoslavueltaaldia.com/sites/default/files/pizza-carne-jamon-queso.jpg" alt="Tarta de Chocolate" />
+        <h4>Pizza Jamón y Queso</h4>
+        <p>Pizza cubierta con salsa de tomate, queso mozzarella y jamón cocido.</p>
+        <p class="price">$11.50</p>
+       <a href="#" onclick="agregarAlCarrito('Pizza Jamon y Queso', 11.50, 'https://www.demoslavueltaaldia.com/sites/default/files/pizza-carne-jamon-queso.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+      <div class="product-card">
+        <img src="https://www.losllanos.mx/wp-content/uploads/2023/06/Pizza_cuatro_quesos_los_llanos.jpg" alt="Frappé de Vainilla" />
+        <h4>Pizza 4 quesos</h4>
+        <p>Mezcla de quesos mozzarella, azul, parmesano y cheddar.</p>
+        <p class="price">$14.00</p>
+       <a href="#" onclick="agregarAlCarrito('Pizza 4 quesos', 14.00, 'https://www.losllanos.mx/wp-content/uploads/2023/06/Pizza_cuatro_quesos_los_llanos.jpg')"class="button" style="background-color: beige;">Añadir al carrito</a>
+      </div>
+    </div>
+  </section>
+  <a href="index.html" class="button" style="background-color: beige;">Volver</a>
+
+  <script>
+function agregarAlCarrito(nombre, precio, imagen) {
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Buscar si ya existe
+  const productoExistente = carrito.find(p => p.nombre === nombre);
+
+  if (productoExistente) {
+    productoExistente.cantidad += 1;
+  } else {
+    carrito.push({ nombre, precio, imagen, cantidad: 1 });
+  }
+
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  // Mostrar mensaje al usuario
+  alert('✅ Has añadido al carrito exitosamente.');
+}
+</script>
+
+</body>
+</html>
